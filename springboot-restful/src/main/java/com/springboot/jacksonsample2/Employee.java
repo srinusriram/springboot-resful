@@ -1,16 +1,19 @@
-package com.springboot.jackonsample;
+package com.springboot.jacksonsample2;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Employee {
 
 	String name;
 	String age;
 	String deptName;
-	iDepartment dept;
+	@Autowired
+	Department dept;
 
 	/**
 	 * @return the dept
 	 */
-	public iDepartment getDept() {
+	public Department getDept() {
 		return dept;
 	}
 
@@ -18,7 +21,7 @@ public class Employee {
 	 * @param dept
 	 *            the dept to set
 	 */
-	public void setDept(iDepartment dept) {
+	public void setDept(Department dept) {
 		this.dept = dept;
 	}
 
@@ -53,7 +56,7 @@ public class Employee {
 	 * @param deptName
 	 * @param dept
 	 */
-	public Employee(String name, String age, String deptName, iDepartment dept) {
+	public Employee(String name, String age, String deptName, Department dept) {
 		super();
 		this.name = name;
 		this.age = age;

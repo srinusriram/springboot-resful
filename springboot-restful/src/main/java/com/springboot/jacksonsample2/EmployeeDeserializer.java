@@ -1,4 +1,4 @@
-package com.springboot.jackonsample;
+package com.springboot.jacksonsample2;
 
 import java.io.IOException;
 
@@ -19,6 +19,7 @@ public class EmployeeDeserializer extends StdDeserializer<Employee> {
 
 		String deptName = null;
 		while (!parser.isClosed()) {
+			System.out.println("parser -" + parser.toString());
 			// System.out.println("Looping 1..........!");
 			JsonToken jsonToken = parser.nextToken();
 			if (JsonToken.FIELD_NAME.equals(jsonToken)) {
@@ -42,7 +43,7 @@ public class EmployeeDeserializer extends StdDeserializer<Employee> {
 				}
 				else if ("department".equals(fieldName)) {
 					System.out.println("Looping 8..........!" + parser.getValueAsString());
-					emp.setDept(null);
+					// emp.setDept(dept);Dept(parser.getValueAsString());
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-package com.springboot.jackonsample;
+package com.springboot.jacksonsample2;
 
 import java.io.IOException;
 

@@ -1,6 +1,9 @@
-package com.springboot.jackonsample;
+package com.springboot.jacksonsample2;
 
-public class Finance implements iDepartment {
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("finance")
+public class Finance extends Department {
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -8,20 +11,18 @@ public class Finance implements iDepartment {
 	 */
 	@Override
 	public String toString() {
-		return "Finance [exp=" + exp + ", financeDegree=" + financeDegree + "]";
+		return "Finance [financeDegree=" + financeDegree + "]";
 	}
 
 	/**
 	 * @param exp
 	 * @param financeDegree
 	 */
-	public Finance(String exp, String financeDegree) {
+	public Finance(String financeDegree) {
 		super();
-		this.exp = exp;
 		this.financeDegree = financeDegree;
 	}
 
-	String exp;
 	String financeDegree;
 
 	/**
@@ -29,21 +30,6 @@ public class Finance implements iDepartment {
 	 */
 	public String getFinanceDegree() {
 		return financeDegree;
-	}
-
-	/**
-	 * @return the exp
-	 */
-	public String getExp() {
-		return exp;
-	}
-
-	/**
-	 * @param exp
-	 *            the exp to set
-	 */
-	public void setExp(String exp) {
-		this.exp = exp;
 	}
 
 	/**

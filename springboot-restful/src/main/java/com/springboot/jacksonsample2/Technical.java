@@ -1,13 +1,15 @@
-package com.springboot.jackonsample;
+package com.springboot.jacksonsample2;
 
-public class Technical implements iDepartment {
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("technical")
+public class Technical extends Department {
 	/**
 	 * @param exp
 	 * @param technicalDegree
 	 */
-	public Technical(String exp, String technicalDegree) {
+	public Technical(String technicalDegree) {
 		super();
-		this.exp = exp;
 		this.technicalDegree = technicalDegree;
 	}
 
@@ -18,26 +20,10 @@ public class Technical implements iDepartment {
 	 */
 	@Override
 	public String toString() {
-		return "Technical [exp=" + exp + ", technicalDegree=" + technicalDegree + "]";
+		return "Technical [technicalDegree=" + technicalDegree + "]";
 	}
 
-	String exp;
 	String technicalDegree;
-
-	/**
-	 * @return the exp
-	 */
-	public String getExp() {
-		return exp;
-	}
-
-	/**
-	 * @param exp
-	 *            the exp to set
-	 */
-	public void setExp(String exp) {
-		this.exp = exp;
-	}
 
 	/**
 	 * @return the technicalDegree
